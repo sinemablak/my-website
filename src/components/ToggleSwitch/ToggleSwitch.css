@@ -1,0 +1,49 @@
+.toggle-switch {
+  position: relative;
+  width: 50px;
+}
+
+.toggle-switch__label {
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  background-color: black;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.toggle-switch__input {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  box-shadow: inset 5px 0px 0px 0px #ffe86e;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.toggle-switch__input:not(:checked) ~ .slider {
+  background-color: #e92577;
+}
+
+.toggle-switch__input:not(:checked) ~ .slider::before {
+  transform: translateX(22px);
+  background-color: #ffe86e;
+  box-shadow: none;
+}
